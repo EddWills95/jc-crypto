@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 const possibleCurrencies = ['', 'BTC', 'LTC', 'DOGE'];
+const url = 'https://min-api.cryptocompare.com/data/all/coinlist';
+
 
 export default class AddPairModal extends Component {
 
@@ -16,7 +18,11 @@ export default class AddPairModal extends Component {
   }
 
   componentDidMount() {
-    // Dispatch to redux here
+    // Dispatch to redux here (Get fetch working first)
+
+    fetch(url)
+      .then(d => d.json())
+      .then(data => console.log(data));
   }
 
   selectCurrency (event) {
