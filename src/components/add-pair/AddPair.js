@@ -22,11 +22,6 @@ export default class AddPair extends Component {
 
     this.state = {
       modalIsOpen: false,
-      allCoinsData: null,
-      selections: {
-        first: '',
-        second: ''
-      }
     }
 
     this.openModal = this.openModal.bind(this);

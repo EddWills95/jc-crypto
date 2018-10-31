@@ -15,6 +15,10 @@ export default class AddPairModal extends Component {
     this.selectCurrency = this.selectCurrency.bind(this);
   }
 
+  componentDidMount() {
+    // Dispatch to redux here
+  }
+
   selectCurrency (event) {
     this.setState({
       ...this.state,
