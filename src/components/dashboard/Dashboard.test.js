@@ -12,4 +12,10 @@ describe('DashboardComponent', () => {
     expect(comp).toBeTruthy();
   })
 
+  it('should have an add button', () => {
+    const button = comp.find('#add-pair');
+
+    expect(button.length).toEqual(1);
+  })
+
 })
