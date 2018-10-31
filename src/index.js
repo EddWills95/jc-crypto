@@ -8,6 +8,8 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 import { coins } from './reducers/coins';
 
+// Combined Reducers Later
+
 const store = createStore(coins);
 
 ReactDOM.render(
