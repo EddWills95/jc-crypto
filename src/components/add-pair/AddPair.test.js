@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { shallow } from 'enzyme';
+import { async } from 'jest';
 import AddPair from './AddPair';
 
 describe('AddPair', () => {
-
   const comp = shallow(<AddPair />);
 
   it('should render without fail', () => {
@@ -12,21 +12,28 @@ describe('AddPair', () => {
   })
 
   describe('add pair button', () => {
-    const button = comp.find('button');
+    beforeEach(() => {
+      fetch.resetMocks()
+    })
 
-    it('should have a button', () => {
-
+    const button = comp.find('.add-modal-button');
+    
+    it('should have a button to open modal', () => {
       expect(button.length).toEqual(1);
       expect(button.text()).toEqual('Add Crypto Pair');
     })
-  
+    
     it('should show a modal on button click', () => {
-
       button.simulate('click');
-  
+
       const modal = comp.find('.add-modal');
 
       expect(modal.length).toEqual(1);
+    })
+
+    it('should fetch a list of possible coins on click', () => {  
+
+
     })
   })
 
