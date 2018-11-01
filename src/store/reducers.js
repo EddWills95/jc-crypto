@@ -36,6 +36,11 @@ export function coinReducer(state = initialState, action) {
         ...state,
         selectedPairs: [...state.selectedPairs, pairObj]
       }
+    // case('PAIR_ERROR'):
+    //   return {
+    //     ...state,
+    //     pairError: action.payload
+    //   }
     default: 
       return state;  
   }
