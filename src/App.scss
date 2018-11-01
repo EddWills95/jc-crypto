@@ -30,3 +30,19 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  background-color: #2ECC40;
+  border-radius: 4px;
+  margin: 0.5rem;
+  padding: 0.3rem;
+  min-width: 6rem;
+  color: white;
+  font-size: 0.8rem;
+  transition-duration: 0.3s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+}
