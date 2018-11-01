@@ -7,9 +7,13 @@ const initialState = {
 export default function coinReducer(state = initialState, action) {
   switch (action.type) {
     case('FETCH_ALL_COINS'):
+      const data = action.coins['Data'];
+      const coinCollection = Object.keys(data).map(k => {
+        return data[k]
+      })
       return {
         ...state,
-        coins: action.coins['Data']
+        coins: coinCollection
       }
     default: 
       return state;  

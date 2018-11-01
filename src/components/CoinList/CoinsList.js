@@ -5,8 +5,9 @@ export default class CoinList extends Component {
   render() {
     return (
       <div className="CoinList">
-        {console.log(this.props)}
-        <p>{JSON.stringify(this.props.coins)}</p>
+        {this.props.coins && this.props.coins.map(c => (
+          <p key={c.id}>{c.CoinName}</p>
+        ))}
       </div>
     )
   }
