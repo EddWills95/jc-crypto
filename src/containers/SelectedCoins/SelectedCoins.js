@@ -7,18 +7,30 @@ import * as actions from '../../store/actions';
 
 class SelectedCoins extends Component {
 
+  constructor() {
+    super()
+
+    this.removePair = this.removePair.bind(this);
+  }
+  
   componentDidMount() {
     this.props.dispatch(actions.fetchCoins());
   }
 
+  removePair(index) {
+    this.props.dispatch(actions.removePair(index));
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div className="SelectedCoins">
         <h2>My Favourite Coins</h2>
         {this.props.loading && <div className="loading-notice">
           <h1>LOADING...</h1>
         </div>}
-        <CoinList coins={this.props.selectedPairs} />
+
+        <CoinList coins={this.props.selectedPairs} removePair={this.removePair} />
       </div>
     );
   }

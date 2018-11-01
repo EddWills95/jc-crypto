@@ -53,3 +53,9 @@ export function setPair(pair) {
     }
   }
 }
+
+export function removePair(index) {
+  return (dispatch, getState) => {
+    dispatch({ type: 'REMOVE_PAIR', payload: index });
+  }
+}
