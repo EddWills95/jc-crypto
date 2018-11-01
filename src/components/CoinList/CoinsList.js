@@ -5,9 +5,8 @@ export default class CoinList extends Component {
   render() {
     return (
       <div className="CoinList">
-        {this.props.coins && this.props.coins.map(c => (
-          <p>{JSON.stringify(c)}</p>
-        ))}
+        {console.log(this.props)}
+        <p>{JSON.stringify(this.props.coins)}</p>
       </div>
     )
   }
