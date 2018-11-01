@@ -5,6 +5,8 @@ import * as actions from '../../store/actions';
 
 import Modal from 'react-modal';
 
+import './AddCoinPair.scss';
+
 Modal.setAppElement('body')
 
 class AddCoinPair extends Component {
