@@ -6,6 +6,8 @@ import * as actions from '../../store/actions';
 import Modal from 'react-modal';
 
 import './AddCoinPair.scss';
+import Ionicon from 'react-ionicons'
+
 
 Modal.setAppElement('body')
 
@@ -83,8 +85,12 @@ class AddCoinPair extends Component {
             <h1>Loading...</h1>
           </div>}
           <div className="add-coin-modal">
-            <button onClick={this.closeModal}>Close Modal</button>
-
+            <Ionicon className="modal-close" 
+                     icon="ios-close" 
+                     color="black" 
+                     fontSize="3rem" 
+                     onClick={this.closeModal}
+                     />
             <form>
               <label>Currency 1</label>
               <select id="currency1" onChange={this.selectChange} value={this.state.currency1}>
