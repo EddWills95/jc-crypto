@@ -14,8 +14,8 @@ class SelectedCoins extends Component {
   render() {
     return (
       <div>
-        <h2>Where are my coins?</h2>
-        <CoinList coins={this.props.coins} />
+        <h2>My Favourite Coins</h2>
+        <CoinList coins={this.props.selectedPairs} />
       </div>
     );
   }
@@ -27,7 +27,7 @@ class SelectedCoins extends Component {
 
 function mapStateToProps(state) {
   return {
-    coins: state.default.coins
+    selectedPairs: state.default.selectedPairs
   };
 }
 
