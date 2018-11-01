@@ -30,10 +30,16 @@ export function setPair(pair) {
             cur1: pair.currency1,
             cur2: pair.currency2
           }
-          dispatch({ type: 'SET_PAIR', payload: payloadObj})
+          dispatch({ type: 'SET_PAIR', payload: payloadObj});
         })
     } catch (error) {
       console.log(error);
     }
+  }
+}
+
+export function removePair(index) {
+  return (dispatch, getState) => {
+    dispatch({ type: 'REMOVE_PAIR', payload: index });
   }
 }

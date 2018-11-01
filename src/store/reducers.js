@@ -41,6 +41,14 @@ export function coinReducer(state = initialState, action) {
     //     ...state,
     //     pairError: action.payload
     //   }
+    case('REMOVE_PAIR'):
+      const index = state.payload;
+      let tempPairs = [...state.selectedPairs];
+      tempPairs.splice(index, 1);
+      return {
+        ...state,
+        selectedPairs: tempPairs
+      }
     default: 
       return state;  
   }
