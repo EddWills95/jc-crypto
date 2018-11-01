@@ -27,7 +27,7 @@ class SelectedCoins extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedPairs: state.default.selectedPairs
+    selectedPairs: state.coinReducer.selectedPairs
   };
 }
 

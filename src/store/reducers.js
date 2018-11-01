@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const initialState = {
   allCoins: [],
   selectedPairs: []
@@ -6,7 +8,7 @@ const initialState = {
 // This is the thing setting the state and moving things around!
 
 // This will reduce all the coins.
-export default function coinReducer(state = initialState, action) {
+export function coinReducer(state = initialState, action) {
   switch (action.type) {
     case('FETCH_ALL_COINS'):
       const data = action.payload['Data'];
@@ -38,3 +40,7 @@ export default function coinReducer(state = initialState, action) {
       return state;  
   }
 }
+
+const combinedReducer = combineReducers({coinReducer});
+
+export default combinedReducer;

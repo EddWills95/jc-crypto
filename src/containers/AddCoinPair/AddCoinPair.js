@@ -87,7 +87,7 @@ class AddCoinPair extends Component {
 
 function mapStateToProps(state) {
   return {
-    allCoins: state.default.allCoins
+    allCoins: state.coinReducer.allCoins
   }
 }
 
