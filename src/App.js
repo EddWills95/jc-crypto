@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Dashboard from './components/dashboard/Dashboard';
+import SelectedCoins from './containers/SelectedCoins/SelectedCoins';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Dashboard />
+        <SelectedCoins />
       </div>
     );
   }
