@@ -22,7 +22,6 @@ class SelectedCoins extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="SelectedCoins">
         <h2>My Favourite Coins</h2>
