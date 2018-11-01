@@ -3,3 +3,24 @@
   margin-left: auto;
   margin-right: 1rem;
 }
+
+.add-coin-modal {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1;
+  align-items: center;
+  button {
+    margin-left: auto;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    select {
+      width: 70%;
+      margin: 0.5rem;
+    }
+  }
+}

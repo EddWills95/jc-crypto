@@ -9,6 +9,19 @@ import './AddCoinPair.scss';
 
 Modal.setAppElement('body')
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    minHeight: '2rem',
+    minWidth: '15rem'
+  }
+};
+
 class AddCoinPair extends Component {
   constructor() {
     super();
@@ -65,12 +78,14 @@ class AddCoinPair extends Component {
       <div className="AddCoinPair">
         <button onClick={this.openModal}>Add Coin Pair</button>
 
-        <Modal isOpen={this.state.modalIsOpen}>
+        <Modal isOpen={this.state.modalIsOpen} style={customStyles}>
+          {this.props.loading && <div className="loading-notice">
+            <h1>Loading...</h1>
+          </div>}
           <div className="add-coin-modal">
             <button onClick={this.closeModal}>Close Modal</button>
 
             <form>
-  
               <label>Currency 1</label>
               <select id="currency1" onChange={this.selectChange} value={this.state.currency1}>
                 <option value=''></option>
@@ -98,7 +113,8 @@ class AddCoinPair extends Component {
 
 function mapStateToProps(state) {
   return {
-    allCoins: state.coinReducer.allCoins
+    allCoins: state.coinReducer.allCoins,
+    loading: state.loadingReducer.loading
   }
 }
 
