@@ -13,8 +13,11 @@ class SelectedCoins extends Component {
 
   render() {
     return (
-      <div>
+      <div className="SelectedCoins">
         <h2>My Favourite Coins</h2>
+        {this.props.loading && <div className="loading-notice">
+          <h1>LOADING...</h1>
+        </div>}
         <CoinList coins={this.props.selectedPairs} />
       </div>
     );
@@ -27,7 +30,8 @@ class SelectedCoins extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedPairs: state.coinReducer.selectedPairs
+    selectedPairs: state.coinReducer.selectedPairs,
+    loading: state.loadingReducer.loading
   };
 }
 
