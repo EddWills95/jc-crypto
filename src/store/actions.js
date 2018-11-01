@@ -36,6 +36,10 @@ export function setPair(pair) {
         .then(response => response.json())
         .then(data => {
           // Need to catch if the message includes a failure (no pair to transfer)
+          // if (data.Data.length < 1) {
+          //   dispatch({ type: 'PAIR_ERROR', payload: data.Message })
+          // }
+
           const payloadObj = {
             data: data,
             cur1: pair.currency1,

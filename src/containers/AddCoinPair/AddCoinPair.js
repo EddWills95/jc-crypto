@@ -14,13 +14,15 @@ class AddCoinPair extends Component {
     this.state = { 
       modalIsOpen: false,
       currency1: '',
-      currency2: ''
+      currency2: '',
+      formValid: false
     }
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.selectChange = this.selectChange.bind(this);
     this.submitPair = this.submitPair.bind(this);
+    this.formValid = this.formValid.bind(this);
   }
 
   openModal() {
@@ -36,6 +38,7 @@ class AddCoinPair extends Component {
       [event.target.id]: event.target.value
     }
     this.setState(tempObj);
+    this.formValid();
   }
 
   submitPair(event) { 
@@ -45,6 +48,14 @@ class AddCoinPair extends Component {
       currency2: this.state.currency2
     }))
     this.closeModal();
+  }
+
+  formValid() {
+    if(this.state.currency1 === '' || this.state.currency2 === '') {
+      this.setState({ formValid: false })
+    } else {
+      this.setState({ formValid: true })
+    }
   }
 
   render() {
@@ -62,7 +73,7 @@ class AddCoinPair extends Component {
               <select id="currency1" onChange={this.selectChange} value={this.state.currency1}>
                 <option value=''></option>
                 {this.props.allCoins && this.props.allCoins.map(c => {
-                  return <option key={c.Id} value={c.Symbol}>{c.Name}</option>
+                  return <option key={c.Id} disabled={c.Symbol === this.state.currency1} value={c.Symbol}>{c.Name}</option>
                 })}
               </select>
 
@@ -70,15 +81,13 @@ class AddCoinPair extends Component {
               <select id="currency2" onChange={this.selectChange} value={this.state.currency2}>
                 <option value=''></option>
                 {this.props.allCoins && this.props.allCoins.map(c => {
-                  return <option key={c.Id} value={c.Symbol}>{c.Name}</option>
+                  return <option key={c.Id} disabled={c.Symbol === this.state.currency1} value={c.Symbol}>{c.Name}</option>
                 })}
               </select>
 
-              <button onClick={this.submitPair} type="submit">Add Pair</button>
+              <button disabled={this.state.formValid} onClick={this.submitPair} type="submit">Add Pair</button>
             </form>
           </div>
-
-
         </Modal>
       </div>
     )
