@@ -7,6 +7,10 @@ const initialCoinState = {
     {label: 'BTC / LTC', data: '0.1242'},
     {label: 'BTC / LTC', data: '0.1242'},
     {label: 'BTC / LTC', data: '0.1242'},
+    {label: 'BTC / LTC', data: '0.1242'},
+    {label: 'BTC / LTC', data: '0.1242'},
+    {label: 'BTC / LTC', data: '0.1242'},
+    {label: 'BTC / LTC', data: '0.1242'},
   ]
 };
 
