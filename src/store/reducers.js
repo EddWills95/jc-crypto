@@ -2,16 +2,7 @@ import { combineReducers } from "redux";
 
 const initialCoinState = {
   allCoins: [],
-  selectedPairs: [
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-    {label: 'BTC / LTC', data: '0.1242'},
-  ]
+  selectedPairs: []
 };
 
 const initialLoadingState = {
