@@ -5,12 +5,12 @@
   .coin-pair-wrapper {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     .coin-pair {
       border-radius: 5%;
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
       margin: 1rem;
-      flex: 1;
-      min-width: 10rem;
+      width: 13rem;
       button {
         background-color: #FF4136;
       }
