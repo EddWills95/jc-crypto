@@ -1,27 +1,40 @@
-function isLoading() {
-  return(dispatch, getState) => {
-    dispatch({ type: 'LOADING_CHANGE', payload: true })
-  }
+export function isLoading() {
+  return { type: 'LOADING_CHANGE', payload: true }
 }
 
-function notLoading() {
-  return(dispatch, getState) => {
-    dispatch({ type: 'LOADING_CHANGE', payload: true })
+export function notLoading() {
+  return { type: 'LOADING_CHANGE', payload: false }
+}
+
+function fetchAllSucces(data) {
+  return {
+    type: 'FETCH_ALL_COINS', payload: data
   }
 }
 
 export function fetchCoins() {
   return async(dispatch, getState) => {
     try {
-      isLoading();
-      fetch('https://min-api.cryptocompare.com/data/all/coinlist')
+      dispatch(isLoading());
+      return fetch('https://min-api.cryptocompare.com/data/all/coinlist')
         .then(response => response.json())
         .then((data) => {
-          notLoading();
-          dispatch({ type: 'FETCH_ALL_COINS', payload: data })
+          dispatch(notLoading());
+          dispatch(fetchAllSucces(data));
         })
     } catch (error) {
       console.log(error);
+    }
+  }
+}
+
+function fetchPairSuccess(data, pair) {
+  return {
+    type: 'SET_PAIR',
+    payload: {
+      data: data,
+      cur1: pair.currency1,
+      cur2: pair.currency2
     }
   }
 }
@@ -31,22 +44,12 @@ export function setPair(pair) {
     // Fetch the data here!
     const url = `https://min-api.cryptocompare.com/data/price?fsym=${pair.currency1}&tsyms=${pair.currency2}`
     try {
-      isLoading();
-      fetch(url)
+      dispatch(isLoading());
+      return fetch(url)
         .then(response => response.json())
         .then(data => {
-          // Need to catch if the message includes a failure (no pair to transfer)
-          // if (data.Data.length < 1) {
-          //   dispatch({ type: 'PAIR_ERROR', payload: data.Message })
-          // }
-
-          const payloadObj = {
-            data: data,
-            cur1: pair.currency1,
-            cur2: pair.currency2
-          }
-          notLoading();
-          dispatch({ type: 'SET_PAIR', payload: payloadObj})
+          dispatch(notLoading());
+          dispatch(fetchPairSuccess(data, pair))
         })
     } catch (error) {
       console.log(error);
