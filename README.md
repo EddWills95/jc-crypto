@@ -11,6 +11,7 @@
 
 - State Management with Redux
 - Tested Using Jest
+- Added the chrome extension to look into redux (Would remove if in production)
 
 ## To Do
 - Theres some error catching that needs to be done
