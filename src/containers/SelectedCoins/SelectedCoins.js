@@ -5,7 +5,7 @@ import CoinList from '../../components/CoinList/CoinsList';
 import * as actions from '../../store/actions';
 
 
-class SelectedCoins extends Component {
+export class SelectedCoins extends Component {
 
   constructor() {
     super()
