@@ -24,6 +24,8 @@
 - Add a Dehyrate and Rehydrate from the local storage
    - Add a user system (Would require a backend, may do this later)
 
+- Would be nice to be able to move the widgets order
+
 - Maybe add how many API calls the users has left for that day as a small notice in the corner.
 
 ## Building and Running
