@@ -21,6 +21,10 @@ describe('SelectedCoins', () => {
     expect(comp).toBeTruthy();
   });
 
+  it('should call to fetch all coins', () => {
+    expect(dispatch).toBeCalled();
+  })
+
   describe('visual', () => {
     it('should have a title', () => {
       const title = comp.find('h2');
