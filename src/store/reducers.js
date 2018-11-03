@@ -2,7 +2,10 @@ import { combineReducers } from "redux";
 
 const initialCoinState = {
   allCoins: [],
-  selectedPairs: []
+  selectedPairs: [
+    {label: 'ANON / BURST', data: 27.64},
+    {label: 'BTC / LTC', data: 124.94 }
+  ]
 };
 
 const initialLoadingState = {
@@ -45,7 +48,7 @@ export function coinReducer(state = initialCoinState, action) {
     //     pairError: action.payload
     //   }
     case('REMOVE_PAIR'):
-      const index = state.payload;
+      const index = action.payload;
       let tempPairs = [...state.selectedPairs];
       tempPairs.splice(index, 1);
       return {
