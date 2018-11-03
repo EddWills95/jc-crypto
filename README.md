@@ -1,4 +1,24 @@
-## Updates
+## Explaination
+
+- Technical Exercise for JungleCreative
+- Uses the CryptoCompare API to fetch a list of tradable coins and their prices
+
+- State Management with Redux
+- Tested Using Jest
+
+## To Do
+- Theres some error catching that needs to be done
+   - I'd like to disallow the coin from being added if its not a tradable pair (something i've only seen a few times)
+
+- Don't allow the same pair to be added twice
+- Add more information on the homescreen as this information is already in the store
+   - If there is the pair BTC/LTC, on hover it would be nice to see more information like how many are in ciruclation and market cap etc.
+
+- Add a Dehyrate and Rehydrate from the local storage
+   - Add a user system (Would require a backend, may do this later)
+
+
+## Building and Running
 
 Run dev with `npm dev`
 Build with `npm start`
