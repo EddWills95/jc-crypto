@@ -24,7 +24,7 @@ const customStyles = {
   }
 };
 
-class AddCoinPair extends Component {
+export class AddCoinPair extends Component {
   constructor() {
     super();
 
@@ -78,7 +78,7 @@ class AddCoinPair extends Component {
   render() {
     return(
       <div className="AddCoinPair">
-        <button onClick={this.openModal}>Add Coin Pair</button>
+        <button className="add-coin-pair-button" onClick={this.openModal}>Add Coin Pair</button>
 
         <Modal isOpen={this.state.modalIsOpen} style={customStyles}>
           {this.props.loading && <div className="loading-notice">
