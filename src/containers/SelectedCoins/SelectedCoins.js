@@ -24,7 +24,8 @@ export class SelectedCoins extends Component {
   render() {
     return (
       <div className="SelectedCoins">
-        <h2>My Favourite Coins</h2>
+        <h2>Jungle Creative - Technical Exercise</h2>
+        <h3>Edd Williams</h3>
         {this.props.loading && <div className="loading-notice">
           <h1>LOADING...</h1>
         </div>}
