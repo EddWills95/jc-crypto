@@ -40,6 +40,7 @@ export class AddCoinPair extends Component {
     this.selectChange = this.selectChange.bind(this);
     this.submitPair = this.submitPair.bind(this);
     this.formValid = this.formValid.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   openModal() {
@@ -64,7 +65,15 @@ export class AddCoinPair extends Component {
       currency1: this.state.currency1,
       currency2: this.state.currency2
     }))
+    this.clearState();
     this.closeModal();
+  }
+
+  clearState() {
+    this.setState({
+      currency1: '',
+      currency2: ''
+    })
   }
 
   formValid() {
