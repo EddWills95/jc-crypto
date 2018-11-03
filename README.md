@@ -1,3 +1,9 @@
+## How to use
+
+- Click 'Add Coin Pair'
+- Choose two coins to compare the price
+- A widget that you can delete should now be on the front page
+
 ## Explaination
 
 - Technical Exercise for JungleCreative
@@ -8,21 +14,25 @@
 
 ## To Do
 - Theres some error catching that needs to be done
-   - I'd like to disallow the coin from being added if its not a tradable pair (something i've only seen a few times)
+   - I'd like to disallow the coins from being added if its not a tradable pair (something i've only seen a few times)
+   - ...or at least show an error
 
 - Don't allow the same pair to be added twice
 - Add more information on the homescreen as this information is already in the store
-   - If there is the pair BTC/LTC, on hover it would be nice to see more information like how many are in ciruclation and market cap etc.
+   - If there is the pair BTC/LTC, on hover it would be nice to see more information like how many are in ciruclation and market cap etc. which is something that should already be the store from the initial grab of all the coins.
 
 - Add a Dehyrate and Rehydrate from the local storage
    - Add a user system (Would require a backend, may do this later)
 
+- Maybe add how many API calls the users has left for that day as a small notice in the corner.
 
 ## Building and Running
 
 Run dev with `npm dev`
+
 Build with `npm start`
 
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
