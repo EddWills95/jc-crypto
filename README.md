@@ -1,3 +1,7 @@
+# Hosted
+
+At: https://jc-crypto.herokuapp.com/
+
 ## How to use
 
 - Click 'Add Coin Pair'
