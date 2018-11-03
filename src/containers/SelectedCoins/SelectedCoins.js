@@ -36,10 +36,6 @@ export class SelectedCoins extends Component {
   }
 }
 
-// which props do we want to inject, given the global store state?
-// Could use a selector for bigger app
-// This should be propgating down
-
 function mapStateToProps(state) {
   return {
     selectedPairs: state.coinReducer.selectedPairs,
