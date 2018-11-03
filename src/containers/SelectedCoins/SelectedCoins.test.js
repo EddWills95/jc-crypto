@@ -3,6 +3,8 @@ import { shallow } from 'enzyme'
 
 import { SelectedCoins } from './SelectedCoins';
 
+import * as actions from '../../store/actions';
+
 describe('SelectedCoins', () => {
 
   let comp;
@@ -56,4 +58,15 @@ describe('SelectedCoins', () => {
       })
     })
   })
+
+  // Not totally sure how to test this.
+  // describe('removePair function', () => {    
+  //   beforeEach(() => {
+  //     comp.instance().removePair(0);
+  //   })
+
+  //   it('should call dispatch to remove the pair', () => {
+  //     expect(dispatch).toHaveBeenLastCalledWith(actions.removePair(0));
+  //   })
+  // })
 })
