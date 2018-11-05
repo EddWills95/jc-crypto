@@ -10,7 +10,7 @@ At: https://jc-crypto.herokuapp.com/
 
 ## Explaination
 
-- Technical Exercise for JungleCreative
+- Technical Exercise for JungleCreations
 - Uses the CryptoCompare API to fetch a list of tradable coins and their prices
 
 - State Management with Redux
